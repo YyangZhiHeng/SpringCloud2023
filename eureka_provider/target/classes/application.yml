@@ -1,0 +1,22 @@
+server:
+  port: 7004   #自己的端口号
+spring:
+  application:
+    name: eureka-provide1  #实例名
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cloud-order?useUnicode=true&characterEncoding=utf8
+    username: Root
+    password: 123
+logging:
+  level:
+    com.example: debug
+mybatis:
+  type-aliases-package: com.study.eureka_provider.pojo
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7000/eureka/ #注册到eureka-service1
+      instance:
+        hostname: eureka-provide1

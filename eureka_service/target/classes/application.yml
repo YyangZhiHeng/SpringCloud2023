@@ -1,0 +1,14 @@
+server:
+  port: 7000  #服务自己的端口号
+spring:
+  application:
+    name: eureka-service1  #实例名
+
+eureka:
+  client:
+    fetch-registry: false #是否注册自己
+    register-with-eureka: false #是否获取服务注册信息
+    service-url:
+      defaultZone: http://localhost:7001/eureka/  #注册到eureka-service2地址
+      instance:
+        hostname: service1

@@ -1,0 +1,12 @@
+server:
+  port: 7005
+spring:
+  application:
+    name: eureka-provide2
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7000/eureka/ #注册到eureka-service1
+      instance:
+        hostname: eureka-provide2

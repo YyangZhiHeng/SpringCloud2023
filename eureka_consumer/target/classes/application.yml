@@ -1,0 +1,24 @@
+server:
+  port: 7003 #自己的端口号
+spring:
+  application:
+    name: demo-eureka-consumer3  #实例名称
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cloud-user?useUnicode=true&characterEncoding=utf8
+    username: Root
+    password: 123
+logging:
+  level:
+    com.example: debug
+mybatis:
+  type-aliases-package: com.study.eureka_consumer.pojo
+
+eureka:
+  instance:
+    prefer-ip-address: true #是否显示主机名字
+  client:
+    service-url:
+      defaultZone: http://service1:7000/eureka/ #,http://service2:7001/eureka/ #服务注册地址
+      instance:
+        hostname: demo-eureka-consumer1
